@@ -1,7 +1,7 @@
 # APIC-2018
 ## First MVP
 ### Overall Flow
-![screen_flow](screen_flow.jpg | width=100)
+![screen_flow](screen_flow.jpg)
  - screen 1: login page
  - screen 2: user dashboard, all tabs grayed out except for the top banner, that says "please fill out survey"
  - screen 3: a survey that contains some pre-filled fields
