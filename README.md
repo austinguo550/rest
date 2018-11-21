@@ -1,13 +1,32 @@
 # APIC-2018
 ## First MVP
 ### Overall Flow
-![screen_flow](screen_flow.jpg)
- - screen 1: login page
- - screen 2: user dashboard, all tabs grayed out except for the top banner, that says "please fill out survey"
- - screen 3: a survey that contains some pre-filled fields
- - screen 4: user dashboard, all tabs (corresponding to each benefit area) clickable
- - screen 5: comparison of different plans for one benefit, user inputs some parameters up top and the plans change accordingly. Also have some graph on bottom that changes according to input.
+**Screen 1: Welcome**
+```Let's get started / Welcome
+- What's your name?
+- Age?
+- How can we help today? 
+      - category icons, buttons, clickable cards. (Will, trust, not sure)
+``` 
+
+**Screen 2: For Wills**: clicking wills should link to this flow
+```- Fill out basic CA will template //we're only starting with CA
+- Accept basic will, or add more --> gets into complicated permutations
+```
+
+**Screen 3: For Trust**: clicking trust should link to this page
+``` 
+- Text For Page will say something like "Contact Lawyer."
+- (Optional) Collect information to send to a lawyer
+``` 
+
+**Screen 4: Not Sure:**: clicking "not sure" should open this flow.
+```[Flow to help them decide.
+- Survey flow that collects demographic info, shows stats comparisons, etc. and returns a recommendation (either create a will or create a trust)
+- If the final decision is "will", links back to wills flow.
+- If the final decision is "trust" link back to trust page.
+```
 ### Assignments:
- - Austin: screen 2 and 4
- - Ashwin: screen 1 and 3
- - Yifan: sreen 5
+ - Austin: 1
+ - Ashwin: 2
+ - Yifan: 3
