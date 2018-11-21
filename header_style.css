@@ -1,0 +1,24 @@
+
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.header-brand{
+    font-weight: 900;
+    font-size: 3.5em;
+    margin: -2px;
+    font-weight: bolder;
+}
+.header-buttons{
+    position:absolute;
+    text-align: right;
+    right:2em;
+}
+.navbar-brand {float:none;}
+
+nav li {
+    display: inline-block;
+    padding: 5px 5px;
+ }
+ 
