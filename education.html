@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/css/mdb.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="header_style.css">
+    <link rel="stylesheet" type="text/css" href="button_style.css">
+    <title>Rest - Wellness Planning Made Simple</title>
+  </head>
+  <body>
+      
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <span class='header-brand' style='color: #6C9977'>r</span>
+            <span class='header-brand' style='color: #92CCA0'>e</span>
+            <span class='header-brand' style='color: #3C70B4'>s</span>
+            <span class='header-brand' style='color: #64ADE6'>t</span>
+        </a>
+      </div>
+      
+    </nav>
+
+    <div class="container-fluid text-center " style="width:auto; height:100vh; padding: 5vh">
+        <a href="#"><button type="button" class="btn btn-light-blue btn-circle animated grow fadeIn" style="position:relative; left: 0vh; top:0vh;" data-toggle="modal" data-target="#willModal">What is a will?</button></a>
+        
+        <a href="#"><button type="button" class="btn btn-grey btn-circle grow animated fadeIn" style="position:relative; left: 3vh; top: 30vh;" data-toggle="modal" data-target="#trustModal">What is a trust?</button></a>
+
+        <a href="#"><button type="button" class="btn btn-dark-green btn-circle grow animated fadeIn" style="position:relative; left:8vh;top:10vh;" data-toggle="modal" data-target="#estatePlanModal">Why should I create estate planning documents?</button></a>
+
+        <a href="#"><button type="button" class="btn btn-primary btn-circle grow animated fadeIn" style="position:relative; left:8vh; top:40vh;" data-toggle="modal" data-target="#documentsModal">What kind of documents should I have?</button></a>
+    </div>
+      
+    <!-- Will modal -->
+    <div class="modal fade" id="willModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">What is a will?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            A will is a legal document containing instructions as to what should be done with one's money and property after one's death.
+            <br><br>
+            It is revocable and subject to amendment at any time during your lifetime. It also allows you to appoint a guardian for your minor children.
+            <br><br>
+            Even if you think you don't have many assets or that your estate will automatically go where you want upon your death through your state's intestacy laws (which kick in when someone dies without a will), making a will can assure that your exact preferences will be followed after your death.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Create a will</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Trust modal -->
+    <div class="modal fade" id="trustModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">What is a trust?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            A living trust provides lifetime and after-death property management.
+            <br>
+            <br>
+            If you are serving as your own trustee, the trust instrument will provide for a succcessor upon your death or incapacity. Court intervention is not required. Livings trusts also are used to manage property. If a person is disabled by accident or illness, the successor trustee can manage the trust property. As a result, the expense, publicity, and inconvenience of court-supervised distribution of your estate can be avoided.
+            <br>
+            If a living trust is properly written and funded you can:
+
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Avoid probate on your assets</li>
+            <li class="list-group-item">Plan for the possibility of your own incapacity</li>
+            <li class="list-group-item">Control what happens to your property after you are gone</li>
+            <li class="list-group-item">Use it for any size estate</li>
+            <li class="list-group-item">Prevent your financial affairs from becoming a matter of public record</li>
+            </ul>
+            While a trust sounds appealing, there are drawbacks. A living trust is more expensive to set up than a typical will because it must be actively managed after it is created. Most importantly, however, a living trust is useless unless it is funded. A living trust only can control those assets that have been placed into it. If your assets have not been transferred or if you die without funding the trust, the trust will be of no benefit as your estate will still be subject to probate and there may be significant estate tax issues.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Create a trust</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Estate plan modal -->
+    <div class="modal fade" id="estatePlanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Why should I create estate planning documents?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Take action</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Documents modal -->
+    <div class="modal fade" id="documentsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">What kind of documents should I have?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Take action</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/js/mdb.min.js"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+      
+  </body>
+</html>
