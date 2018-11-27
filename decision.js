@@ -53,20 +53,23 @@ function nextBtn(elem) {
         sessionStorage.setItem('marital-status', maritalStatus);
         if(maritalStatus == 'engaged' || maritalStatus == 'single'){
             //if engaged or single, skip over two questions
-            qCurIndex = qCurIndex + 2;
+            qNextIndex = parseInt(qCurIndex, 10) + 3;
         }
     }
     else if (qIds[qCurIndex] == "q-if-include-kids"){
         var ifIncludeKids = getRadioButtonInputUnderQ(qCurIndex);
         sessionStorage.setItem('if-include-kids', ifIncludeKids);
+        alert(ifIncludeKids);
     }
     else if (qIds[qCurIndex] == "q-if-kids-have-disabilities"){
         var ifKidsHaveDisabilities = getRadioButtonInputUnderQ(qCurIndex);
         sessionStorage.setItem('if-kids-have-disabilities', ifKidsHaveDisabilities);
+        alert(ifKidsHaveDisabilities);
     }
     else if (qIds[qCurIndex] == 'q-assets-net-worth'){
         var assetsNetWorth = getRadioButtonInputUnderQ(qCurIndex);
         sessionStorage.setItem('assets-net-worth', assetsNetWorth);
+        alert(assetsNetWorth);
     }
     else if (qIds[qCurIndex] == 'q-concerns-list') {
         //assets list question
@@ -74,6 +77,12 @@ function nextBtn(elem) {
 
         //retrieve list, store as JSON
         sessionStorage.setItem("concerns-list", JSON.stringify(concernsList));
+        
+    }
+    if (qNextIndex >= qIds.length){
+        //reached last question, switch to results
+        location.href = 'decision_result.html';
+        return;
     }
     //enter next question element
     enterQ(qNextIndex);
@@ -106,8 +115,8 @@ function getCheckedListInputUnderQ(qCurIndex) {
 function getRadioButtonInputUnderQ(qCurIndex) {
     //find all the radio inputs under the question div and return the radio element's id that was checked
     var qId = qIds[qCurIndex];
-    var radioForms = document.getElementById(qId).getElementsByClassName('options');
-
+    var radioForms = document.getElementById(qId).getElementsByClassName('active');
+    return radioForms[0].children[0].value;
     for (var i = 0, length = radioForms.length; i < length; i++) {
         if (radioForms[i].checked) {
             return radioForms[i].value;
