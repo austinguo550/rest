@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     makeRecommendation();
 };
 function makeRecommendation() {
@@ -32,13 +32,13 @@ function makeRecommendation() {
                 recommendation = 'trust';
                 talkToLawyer = true;
             }
-            else {  
+            else {
                 //If not, recommend a will but also recommend talking with a lawyer for more information.
                 recommendation = 'will';
                 talkToLawyer = true;
             }
         }
-  
+
     }
 
 
@@ -52,7 +52,7 @@ function makeRecommendation() {
     var resultHeader = document.getElementById("result-header");
     var resultIcon = document.getElementById("result-icon");
     var callToActionBtn = document.getElementById("call-to-action-btn");
-    
+
     //render the components with text
     resultHeader.textContent = resultHeaderText;
     resultExplanation.innerText = resultExplanationText;
@@ -60,10 +60,10 @@ function makeRecommendation() {
     resultIcon.innerText = recommendation;
 
     //set call to action links
-    if(recommendation == 'trust'){
+    if (recommendation == 'trust') {
         callToActionBtn.href = 'trust.html';
     }
-    else if (recommendation == 'will'){
+    else if (recommendation == 'will') {
         callToActionBtn.href = '#'; //page to will creation flow
     }
 }
@@ -76,10 +76,10 @@ function makeResultExplanation(recommendation, talkToLawyer) {
     else if (recommendation == 'will' && talkToLawyer == true) {
         msg = 'Based on your situation, a will will most likely help. Please also consult a lawyer for more info.'
     }
-    else if (recommendation == 'trust' && talkToLawyer == false){
+    else if (recommendation == 'trust' && talkToLawyer == false) {
         msg = 'A trust will help your loved ones. Trusts can help you manage your property and assets, make sure they are distributed after your death according to your wishes, and save your family money, time and paperwork.'
     }
-    else if (recommendation == 'trust' && talkToLawyer == true){
+    else if (recommendation == 'trust' && talkToLawyer == true) {
         msg = 'Based on your situation, a trust will most likely help. Please also consult a lawyer for more info.'
     }
     return msg;

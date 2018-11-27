@@ -51,25 +51,25 @@ function nextBtn(elem) {
         //assets list question
         var maritalStatus = getSelectInputUnderQ(qCurIndex);
         sessionStorage.setItem('marital-status', maritalStatus);
-        if(maritalStatus == 'engaged' || maritalStatus == 'single'){
+        if (maritalStatus == 'engaged' || maritalStatus == 'single') {
             //if engaged or single, skip over two questions
             qNextIndex = parseInt(qCurIndex, 10) + 3;
         }
     }
-    else if (qIds[qCurIndex] == "q-if-include-kids"){
+    else if (qIds[qCurIndex] == "q-if-include-kids") {
         var ifIncludeKids = getRadioButtonInputUnderQ(qCurIndex);
         sessionStorage.setItem('if-include-kids', ifIncludeKids);
-        alert(ifIncludeKids);
+
     }
-    else if (qIds[qCurIndex] == "q-if-kids-have-disabilities"){
+    else if (qIds[qCurIndex] == "q-if-kids-have-disabilities") {
         var ifKidsHaveDisabilities = getRadioButtonInputUnderQ(qCurIndex);
         sessionStorage.setItem('if-kids-have-disabilities', ifKidsHaveDisabilities);
-        alert(ifKidsHaveDisabilities);
+
     }
-    else if (qIds[qCurIndex] == 'q-assets-net-worth'){
+    else if (qIds[qCurIndex] == 'q-assets-net-worth') {
         var assetsNetWorth = getRadioButtonInputUnderQ(qCurIndex);
         sessionStorage.setItem('assets-net-worth', assetsNetWorth);
-        alert(assetsNetWorth);
+
     }
     else if (qIds[qCurIndex] == 'q-concerns-list') {
         //assets list question
@@ -77,9 +77,9 @@ function nextBtn(elem) {
 
         //retrieve list, store as JSON
         sessionStorage.setItem("concerns-list", JSON.stringify(concernsList));
-        
+
     }
-    if (qNextIndex >= qIds.length){
+    if (qNextIndex >= qIds.length) {
         //reached last question, switch to results
         location.href = 'decision_result.html';
         return;
