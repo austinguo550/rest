@@ -71,20 +71,40 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/js/mdb.min.js"></script>
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
     
-    <!-- <script type="text/javascript">
+     <script type="text/javascript">
         window.onload = function() {
             
             function checkSurveyCompleted() {
-                if (sessionStorage.survey === undefined) {
+                let survey = JSON.parse(sessionStorage.getItem("survey"));
+                
+                if (sessionStorage.survey === null) {
+                    console.log("undefined survey")
                     document.getElementById("categories_content").className += " blur";
-                    document.getElementById("surveyButton").style.display = "block"
+                    document.getElementById("surveyButton").style.display = "block";
+                    return;
                 }
+                
+                console.log(survey);
+                let count = 0;
+                for (var k in survey) {
+                    count++;
+                }
+                
+                console.log(count);
+                if (count < 3) {
+                    console.log("too small")
+                    document.getElementById("categories_content").className += " blur";
+                    document.getElementById("surveyButton").style.display = "block";
+                    return;
+                }
+                
+                
             }
             
             
             checkSurveyCompleted();
         }
-    </script> -->
+    </script> 
       
   </body>
 </html>

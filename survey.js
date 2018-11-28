@@ -1,14 +1,24 @@
 
-var qIds = ["q-money-on-estate-planning", "q-assets-list", "q-marital-status", "q-if-include-kids",
-    "q-if-kids-have-disabilities", "q-assets-net-worth", "q-concerns-list"];
+var qIds = ["q-name", "q-age", "q-state"];
+let surveyCompleted = "surveyCompleted";
 //list of all question elements' ids
 
 window.onload = function () {
-    initializeQs();
+    if (sessionStorage.getItem("survey") !== null) {
+        surveyCompletedRedirect();
+    }
+    else {
+        initializeQs();
+    }
 };
+
+function surveyCompletedRedirect() {
+    fadeIn(document.getElementById(surveyCompleted));
+}
+
 function getqCurIndex() {
     var qCurIndex = sessionStorage.getItem("qCurIndex");
-    if (qCurIndex == null) {
+    if (qCurIndex === null) {
         //first time starting the page
         qCurIndex = 0;
     }
@@ -24,60 +34,64 @@ function nextBtn(elem) {
     exitQ(qCurIndex);
     var qNextIndex = parseInt(qCurIndex) + 1;
 
-
-    if (qIds[qCurIndex] == "q-money-on-estate-planning") {
-        //money on estate planning question
-        var moneyOnEstatePlanning = getNumberInputUnderQ(qCurIndex);
-        sessionStorage.setItem('money-on-estate-planning', moneyOnEstatePlanning);
-    }
-    else if (qIds[qCurIndex] == 'q-assets-list') {
-        //assets list question
-        var assetsList = getCheckedListInputUnderQ(qCurIndex);
-
-        //retrieve list, store as JSON
-        sessionStorage.setItem("assets-list", JSON.stringify(assetsList));
-    }
-    else if (qIds[qCurIndex] == 'q-marital-status') {
-        //assets list question
-        var maritalStatus = getSelectInputUnderQ(qCurIndex);
-        sessionStorage.setItem('marital-status', maritalStatus);
-        if (maritalStatus == 'engaged' || maritalStatus == 'single') {
-            //if engaged or single, skip over two questions
-            qNextIndex = parseInt(qCurIndex, 10) + 3;
+    if (qIds[qCurIndex] == "q-name") {
+        //name question
+        // fetch survey object
+        let survey = JSON.parse(sessionStorage.getItem('survey'));
+        console.log(survey);
+        if (survey === null) {
+            survey = new Object();
         }
+        if (survey[qIds[qCurIndex]] === undefined) {
+            var name = document.getElementById('q-name-input').value;
+            console.log(name);
+            // set value
+            survey['q-name'] = name;
+            sessionStorage.setItem('survey', JSON.stringify(survey));
+        }
+        
     }
-    else if (qIds[qCurIndex] == "q-if-include-kids") {
-        var ifIncludeKids = getRadioButtonInputUnderQ(qCurIndex);
-        sessionStorage.setItem('if-include-kids', ifIncludeKids);
-
+    else if (qIds[qCurIndex] == "q-age") {
+        //age question
+        let survey = JSON.parse(sessionStorage.getItem('survey'));
+        console.log(survey);
+        if (survey === null) {
+            survey = new Object();
+        }
+        if (survey[qIds[qCurIndex]] === undefined) {
+            var age = getNumberInputUnderQ(qCurIndex);
+            // set value
+            survey['q-age'] = age;
+            sessionStorage.setItem('survey', JSON.stringify(survey));
+        }
+        
     }
-    else if (qIds[qCurIndex] == "q-if-kids-have-disabilities") {
-        var ifKidsHaveDisabilities = getRadioButtonInputUnderQ(qCurIndex);
-        sessionStorage.setItem('if-kids-have-disabilities', ifKidsHaveDisabilities);
-
-    }
-    else if (qIds[qCurIndex] == 'q-assets-net-worth') {
-        var assetsNetWorth = getRadioButtonInputUnderQ(qCurIndex);
-        sessionStorage.setItem('assets-net-worth', assetsNetWorth);
-
-    }
-    else if (qIds[qCurIndex] == 'q-concerns-list') {
-        //assets list question
-        var concernsList = getCheckedListInputUnderQ(qCurIndex);
-
-        //retrieve list, store as JSON
-        sessionStorage.setItem("concerns-list", JSON.stringify(concernsList));
-
+    else if (qIds[qCurIndex] == "q-state") {
+        //state question
+        let survey = JSON.parse(sessionStorage.getItem('survey'));
+        console.log(survey);
+        if (survey === null) {
+            survey = new Object();
+        }
+        if (survey[qIds[qCurIndex]] === undefined) {
+            var state = getSelectInputUnderQ(qCurIndex);
+            // set value
+            survey['q-state'] = state;
+            sessionStorage.setItem('survey', JSON.stringify(survey));
+        }
+        
     }
     if (qNextIndex >= qIds.length) {
         //reached last question, switch to results
-        location.href = 'decision_result.html';
+        location.href = 'action_selection.html';
         return;
     }
+    
     //enter next question element
     enterQ(qNextIndex);
     sessionStorage.setItem('qCurIndex', qNextIndex);
 }
+
 
 function getNumberInputUnderQ(qCurIndex) {
     //find the 1st element of <input> tag under the question div and return its value as a number
