@@ -8,8 +8,10 @@
     line-height: 1.42;
     border-radius: 90px;
     white-space: normal;
-  }
-
+}
+.btn{
+  text-transform: capitalize;
+}
 .grow {
     transition: all .2s ease-in-out;
 }
