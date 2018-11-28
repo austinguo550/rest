@@ -59,6 +59,11 @@
             </div>
 
         </div>
+        
+        <div id="editSurvey" class="container text-center" style="display:none">
+            <a href="/survey.html"><button type="button" class="btn btn-outline-default waves-effect">Edit survey</button></a>
+        </div>
+        
     </div>
       
     
@@ -74,35 +79,32 @@
      <script type="text/javascript">
         window.onload = function() {
             
+            function editSurvey() {
+                console.log(sessionStorage.getItem("editSurvey"));
+                if (sessionStorage.getItem("editSurvey") == 'true') {
+                    document.getElementById("editSurvey").style.display = "block";
+                }
+            }
+            
             function checkSurveyCompleted() {
                 let survey = JSON.parse(sessionStorage.getItem("survey"));
                 
-                if (sessionStorage.survey === null) {
+                if (sessionStorage.getItem("name") === null && sessionStorage.getItem("age") === null && sessionStorage.getItem("state") === null) {
                     console.log("undefined survey")
                     document.getElementById("categories_content").className += " blur";
                     document.getElementById("surveyButton").style.display = "block";
                     return;
                 }
-                
-                console.log(survey);
-                let count = 0;
-                for (var k in survey) {
-                    count++;
+                else {
+                    sessionStorage.setItem("editSurvey", true);
                 }
-                
-                console.log(count);
-                if (count < 3) {
-                    console.log("too small")
-                    document.getElementById("categories_content").className += " blur";
-                    document.getElementById("surveyButton").style.display = "block";
-                    return;
-                }
-                
                 
             }
             
             
             checkSurveyCompleted();
+            editSurvey();
+            
         }
     </script> 
       
