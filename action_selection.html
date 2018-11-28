@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="header_style.css">
     <link rel="stylesheet" type="text/css" href="button_style.css">
+    <link rel="stylesheet" type="text/css" href="blur.css">
     <title>Rest - Wellness Planning Made Simple</title>
   </head>
   <body>
@@ -27,29 +28,37 @@
             <span class='header-brand' style='color: #64ADE6'>t</span>
         </a>
       </div>
-      
     </nav>
-
-    <div class="blue-text text-center justify-content-center py-5 px-4 my-5">
+      
+    <div id="surveyButton" class="text-center" style="padding: 25vh; display:none; position: absolute; margin:auto; width: 100%; z-index: 100;">
+        <a href="/survey.html"><button type="button" class="btn btn-outline-default waves-effect">Complete survey to get started</button></a>
+    </div>
+      
+    <div id="categories_content" style="z-index:1">
+      <div class="blue-text text-center justify-content-center py-5 px-4 my-5">
         <div>
           <h2 class="card-title h1-responsive pt-3 mb-5 font-bold animated fadeIn"><strong>What can we help you with today?</strong></h2>
-          
+
+        </div>
+      </div>
+        
+        <div class="container text-center">
+            <div class="row justify-content-center">
+              <div class="col-md-4 col-lg-4">
+                <a href="#"><button type="button" class="btn btn-primary btn-circle animated fadeIn">Will</button></a>
+              </div>
+              <div class="col-md-4 col-lg-4">
+                <a href="trust.html"><button type="button" class="btn btn-pink btn-circle animated fadeIn">Trust</button></a>
+              </div>
+              <div class="col-md-4 col-lg-4">
+                <a href="decision.html"><button type="button" class="btn btn-success btn-circle animated fadeIn">Not sure</button></a>
+              </div>
+            </div>
+
         </div>
     </div>
-    <div class="container text-center">
-        <div class="row justify-content-center">
-          <div class="col-md-4 col-lg-4">
-            <a href="#"><button type="button" class="btn btn-primary btn-circle animated fadeIn">Will</button></a>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <a href="trust.html"><button type="button" class="btn btn-pink btn-circle animated fadeIn">Trust</button></a>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <a href="decision.html"><button type="button" class="btn btn-success btn-circle animated fadeIn">Not sure</button></a>
-          </div>
-        </div>
-       
-    </div>
+      
+    
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -58,6 +67,21 @@
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/js/mdb.min.js"></script>
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+    
+    <script type="text/javascript">
+        window.onload = function() {
+            
+            function checkSurveyCompleted() {
+                if (sessionStorage.survey === undefined) {
+                    document.getElementById("categories_content").className += " blur";
+                    document.getElementById("surveyButton").style.display = "block"
+                }
+            }
+            
+            
+            checkSurveyCompleted();
+        }
+    </script>
       
   </body>
 </html>
