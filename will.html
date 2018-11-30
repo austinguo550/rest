@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/css/mdb.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="header_style.css">
+    <link href="survey_styles.css" rel="stylesheet">
     <title>Rest - Wellness Planning Made Simple</title>
+        <script type="text/javascript" src="will.js"></script>
   </head>
   <body>
 
@@ -32,6 +34,413 @@
           <a href="signup.html"><li><button class="btn btn-primary ">Signup</button></li></a>
         </ul>
     </nav>
+
+
+    <!-- ///////////////////////////////////////////////////////////////////////
+    QUESTION 1
+    ////////////////////////////////////////////////////////// -->
+
+    <div id="screen1" class="question-block">
+        <div class="progress" style="height: 20px; width: 90%; margin: 0 auto; margin-top: 1%">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <!-- <div class="card" style="width: 18rem; margin-top: 1%; width: 50%; margin-left: 5%; max-height: 75vh; overflow-y: auto;">
+            <div class="card-body">
+
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1" style="font-size: 80%">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils.</label>
+                </div>
+
+            </div>
+        </div> -->
+
+        <div class="blue-text text-center justify-content-center pt-5 px-4 my-5">
+            <div>
+                <h2 class="card-title h1-responsive pt-2 font-bold animated fadeIn"><strong> Before we start </strong></h2>
+            </div>
+        </div>
+        <section class="mb-4">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-md-9">
+                        <form id="assets-list-form" name="assets-list-form">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="loved-ones-court">
+                                <label class="form-check-label" for="loved-ones-court">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils. </label>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <a class="btn btn-primary col-md-2 mt-5" class="next-btn" onclick="nextBtn(this)">Next</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ///////////////////////////////////////////////////////////////////////
+    QUESTION 2
+    ////////////////////////////////////////////////////////// -->
+        <div id="screen2" class="question-block">
+            <div class="progress" style="height: 20px; width: 90%; margin: 0 auto; margin-top: 1%">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <section class="card-container">
+            <div class="card question-card">
+                <div class="card-body">
+                    <div id="screen2-q1">
+                        <h5 class="card-title card-question" style="font-size: 200%">Do you own your personal residence? If so, would you like to include it in your will?</h5>
+
+                            <div class="answers-container yes-no">
+                                <input type="image" id="yes-screen2-q1"src="assets/yes.png" class="yes-image" onclick="yesOrNoBtn(this, 'screen2')"/>
+                                <input type="image" id="no-screen2-q1" src="assets/no.png" class="no-image" onclick="yesOrNoBtn(this, 'screen2')"/>
+                            </div>
+                    </div>
+                    <div id="screen2-q2" class="hidden-question">
+                        <h5 class="card-title card-question" style="font-size: 200%">Who will you leave your personal residence to?</h5>
+                        <div class="answers-container">
+                            <input type="image" id="spouse-screen2-q2"src="assets/spouse.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this, 'screen2')"/>
+                            <input type="image" id="descendants-screen2-q2" src="assets/descendants.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this, 'screen2')"/>
+                            <input type="image" id="other-screen2-q2" src="assets/specify.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this, 'screen2')"/>
+                        </div>
+                    </div>
+                    <div id="screen2-q3" class="hidden-question">
+                        <h5 class="card-title card-question" style="font-size: 200%">Please specify the names of the person/people:</h5>
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FACTS -->
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <!-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1" style="font-size: 80%">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils.</label>
+                    </div> -->
+
+                </div>
+            </div>
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <a class="btn btn-primary col-md-2 mt-5" class="next-btn" onclick="nextBtn(this)">Next</a>
+                </div>
+            </div>
+            </section>
+
+
+        </div>
+
+        <!-- ///////////////////////////////////////////////////////////////////////
+        QUESTION 3
+        ////////////////////////////////////////////////////////// -->
+
+        <div id="screen3" class="question-block">
+            <div class="progress" style="height: 20px; width: 90%; margin: 0 auto; margin-top: 1%">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <section class="card-container">
+            <div class="card question-card">
+                <div class="card-body">
+                    <div id="screen3-q1">
+                        <h5 class="card-title card-question" style="font-size: 200%">Do you want to include any automobiles, household items, or personal belongings in your will?</h5>
+
+                            <div class="answers-container yes-no">
+                                <input type="image" id="yes-screen3-q1"src="assets/yes.png" class="yes-image" onclick="yesOrNoBtn(this, 'screen3')"/>
+                                <input type="image" id="no-screen3-q1" src="assets/no.png" class="no-image" onclick="yesOrNoBtn(this, 'screen3')"/>
+                            </div>
+                    </div>
+                    <div id="screen3-q2" class="hidden-question">
+                        <h5 class="card-title card-question" style="font-size: 200%">Who will you leave your belongings to?</h5>
+                        <div class="answers-container">
+                            <input type="image" id="spouse-screen3-q2"src="assets/spouse.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this)"/>
+                            <input type="image" id="descendants-screen3-q2" src="assets/descendants.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this)"/>
+                            <input type="image" id="other-screen3-q2" src="assets/specify.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this)"/>
+                        </div>
+                    </div>
+                    <div id="screen3-q3" class="hidden-question">
+                        <h5 class="card-title card-question" style="font-size: 200%">Please specify the names of the person/people:</h5>
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FACTS -->
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <!-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1" style="font-size: 80%">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils.</label>
+                    </div> -->
+
+                </div>
+            </div>
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <a class="btn btn-primary col-md-2 mt-5" class="next-btn" onclick="nextBtn(this)">Next</a>
+                </div>
+            </div>
+            </section>
+
+
+        </div>
+
+        <!-- ///////////////////////////////////////////////////////////////////////
+        QUESTION 4
+        ////////////////////////////////////////////////////////// -->
+
+        <div id="screen4" class="question-block">
+            <div class="progress" style="height: 20px; width: 90%; margin: 0 auto; margin-top: 1%">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <section class="card-container">
+            <div class="card question-card">
+                <div class="card-body">
+                    <div id="screen4-q1">
+                        <h5 class="card-title card-question" style="font-size: 200%">Do you want to specify any cash gifts?</h5>
+
+                            <div class="answers-container yes-no">
+                                <input type="image" id="yes-screen4-q1"src="assets/yes.png" class="yes-image" onclick="yesOrNoBtn(this, 'screen4')"/>
+                                <input type="image" id="no-screen4-q1" src="assets/no.png" class="no-image" onclick="yesOrNoBtn(this, 'screen4')"/>
+                            </div>
+                    </div>
+                    <div id="screen4-q2" class="hidden-question">
+                        <h5 class="card-title card-question" style="font-size: 200%">Please specify the names of the charities:</h5>
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- FACTS -->
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <!-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1" style="font-size: 80%">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils.</label>
+                    </div> -->
+
+                </div>
+            </div>
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <a class="btn btn-primary col-md-2 mt-5" class="next-btn" onclick="nextBtn(this)">Next</a>
+                </div>
+            </div>
+            </section>
+        </div>
+
+        <!-- ///////////////////////////////////////////////////////////////////////
+        QUESTION 5
+        ////////////////////////////////////////////////////////// -->
+
+        <div id="screen5" class="question-block">
+            <div class="progress" style="height: 20px; width: 90%; margin: 0 auto; margin-top: 1%">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <section class="card-container">
+            <div class="card question-card">
+                <div class="card-body">
+                    <div id="screen5-q1">
+                        <h5 class="card-title card-question" style="font-size: 200%">Do you want to specify who should receive the rest of your assets in your will? This excludes anything you’ve already specified.</h5>
+
+                            <div class="answers-container yes-no">
+                                <input type="image" id="yes-screen5-q1"src="assets/yes.png" class="yes-image" onclick="yesOrNoBtn(this, 'screen5')"/>
+                                <input type="image" id="no-screen5-q1" src="assets/no.png" class="no-image" onclick="yesOrNoBtn(this, 'screen5')"/>
+                            </div>
+
+                            <div id="screen5-q2" class="hidden-question">
+                                <h5 class="card-title card-question" style="font-size: 200%">Who will you leave the rest of your assets to?</h5>
+                                <div class="answers-container">
+                                    <input type="image" id="spouse-screen5-q2"src="assets/spouse.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this, 'screen5')"/>
+                                    <input type="image" id="descendants-screen5-q2" src="assets/descendants.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this,'screen5')"/>
+                                    <input type="image" id="other-screen5-q2" src="assets/specify.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this,'screen5')"/>
+                                </div>
+                            </div>
+                            <div id="screen5-q3" class="hidden-question">
+                                <h5 class="card-title card-question" style="font-size: 200%">Please specify the names of the person/people:</h5>
+                                <form>
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                  </div>
+                                  <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                            </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+            <!-- FACTS -->
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <!-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1" style="font-size: 80%">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils.</label>
+                    </div> -->
+
+                </div>
+            </div>
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <a class="btn btn-primary col-md-2 mt-5" class="next-btn" onclick="nextBtn(this)">Next</a>
+                </div>
+            </div>
+            </section>
+        </div>
+
+
+
+        <!-- ///////////////////////////////////////////////////////////////////////
+        QUESTION 6
+        ////////////////////////////////////////////////////////// -->
+
+        <div id="screen6" class="question-block">
+            <div class="progress" style="height: 20px; width: 90%; margin: 0 auto; margin-top: 1%">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <section class="card-container">
+            <div class="card question-card">
+                <div class="card-body">
+                    <div id="screen6-q1">
+                        <h5 class="card-title card-question" style="font-size: 200%">Do you want to specify who should receive the rest of your assets in your will? This excludes anything you’ve already specified.</h5>
+
+                            <div class="answers-container yes-no">
+                                <input type="image" id="yes-screen6-q1"src="assets/yes.png" class="yes-image" onclick="yesOrNoBtn(this, 'screen6')"/>
+                                <input type="image" id="no-screen6-q1" src="assets/no.png" class="no-image" onclick="yesOrNoBtn(this, 'screen6')"/>
+                            </div>
+
+                            <div id="screen6-q2" class="hidden-question">
+                                <h5 class="card-title card-question" style="font-size: 200%">Who will you leave your belongings to?</h5>
+                                <div class="answers-container">
+                                    <input type="image" id="spouse-screen6-q2"src="assets/spouse.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this, 'screen6')"/>
+                                    <input type="image" id="descendants-screen6-q2" src="assets/descendants.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this,'screen6')"/>
+                                    <input type="image" id="other-screen6-q2" src="assets/specify.png" class="choose-inheritor-image" onclick="threeChoicesBtn(this,'screen6')"/>
+                                </div>
+                            </div>
+                            <div id="screen6-q3" class="hidden-question">
+                                <h5 class="card-title card-question" style="font-size: 200%">Please specify the names of the person/people:</h5>
+                                <form>
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                  </div>
+                                  <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                            </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+            <!-- FACTS -->
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <!-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1" style="font-size: 80%">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils.</label>
+                    </div> -->
+
+                </div>
+            </div>
+            <div class="card fact-card">
+                <div class="card-body">
+                    <h5 class="card-title card-question">A graph and some text here</h5>
+                    <a class="btn btn-primary col-md-2 mt-5" class="next-btn" onclick="nextBtn(this)">Next</a>
+                </div>
+            </div>
+            </section>
+        </div>
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
