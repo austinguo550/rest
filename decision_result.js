@@ -70,7 +70,7 @@ function makeRecommendation() {
         callToActionBtn.href = 'trust.html';
     }
     else if (recommendation == 'will') {
-        callToActionBtn.href = '#'; //page to will creation flow
+        callToActionBtn.href = 'will.html'; //page to will creation flow
     }
 }
 

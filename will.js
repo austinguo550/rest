@@ -7,7 +7,7 @@ window.onload = function () {
     initializeQs();
 };
 function getqCurIndex() {
-    var qCurIndex = sessionStorage.getItem("qCurIndex");
+    var qCurIndex = sessionStorage.getItem("qCurIndex-will");
     if (qCurIndex == null) {
         //first time starting the page
         qCurIndex = 0;
@@ -148,12 +148,12 @@ function nextBtn(elem) {
 
     if (qNextIndex >= qIds.length) {
         //reached last question, switch to results
-        location.href = 'decision_result.html';
+        location.href = 'action_selection.html';
         return;
     }
     //enter next question element
     enterQ(qNextIndex);
-    sessionStorage.setItem('qCurIndex', qNextIndex);
+    sessionStorage.setItem('qCurIndex-will', qNextIndex);
 }
 
 function getYesNoInputUnderQ(qCurIndex) {
