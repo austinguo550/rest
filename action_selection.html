@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      
+
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
@@ -17,10 +17,11 @@
     <title>Rest - Wellness Planning Made Simple</title>
   </head>
   <body>
-      
+
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
       <div class="navbar-header">
+
         <a class="navbar-brand" href="index.html">
             <span class='header-brand' style='color: #6C9977'>r</span>
             <span class='header-brand' style='color: #92CCA0'>e</span>
@@ -29,11 +30,11 @@
         </a>
       </div>
     </nav>
-      
+
     <div id="surveyButton" class="text-center" style="padding: 25vh; display:none; position: absolute; margin:auto; width: 100%; z-index: 100;">
         <a href="survey.html"><button type="button" class="btn btn-outline-default waves-effect">Complete survey to get started</button></a>
     </div>
-      
+
     <div id="categories_content" style="z-index:1">
       <div class="blue-text text-center justify-content-center pt-5 pb-1 px-4 my-5">
         <div>
@@ -41,6 +42,7 @@
 
         </div>
       </div>
+
         
         <div class="container text-center pb-3">
             <div class="row justify-content-center">
@@ -65,9 +67,9 @@
         </div>
         
     </div>
-      
-    
-    
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -85,7 +87,7 @@
                     document.getElementById("editSurvey").style.display = "block";
                 }
             }
-            
+
             function checkSurveyCompleted() {
                 let survey = JSON.parse(sessionStorage.getItem("survey"));
                 
@@ -100,13 +102,14 @@
                 }
                 
             }
-            
-            
+
+
             checkSurveyCompleted();
             editSurvey();
             
         }
+
     </script> 
-      
+
   </body>
 </html>
