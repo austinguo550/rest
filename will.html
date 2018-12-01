@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,6 +15,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="header_style.css">
     <link href="survey_styles.css" rel="stylesheet">
+    <link href="button_style.css" rel="stylesheet">
     <title>Rest - Wellness Planning Made Simple</title>
         <script type="text/javascript" src="will.js"></script>
   </head>
@@ -130,22 +133,33 @@
                 </div>
             </div>
 
-
             <!-- FACTS -->
-            <div class="card fact-card">
+            <div class="card fact-card side-card" id='card-screen2-q1'>
                 <div class="card-body">
-                    <h5 class="card-title card-question">A graph and some text here</h5>
-                    <!-- <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1" style="font-size: 80%">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils.</label>
-                    </div> -->
-
+                    <div id="graph-screen2-q1"></div>
+                    
+                    <div class="text-center">
+                        <h5 class="card-title card-question">
+                                50% of people chose to leave their residence in a living trust, we agree. Would you like to create a trust as well?
+                        </h5>
+                        <a class="btn btn-primary mt-4 animated fadeIn" href="trust.html">Create my trust</a>
+                    </div>
                 </div>
+                
             </div>
+            <div class="card fact-card side-card" id='card-screen2-q2'>
+                    <div class="card-body">
+                        <div id="graph-screen2-q2"></div>
+                        
+                    <div class="text-center">
+                        <a class="btn btn-primary mt-4 animated fadeIn">I would like to explore other common scenarios</a>
+                    </div>
+                       
+                    </div>
+                </div>
             <div class="card fact-card">
-                <div class="card-body">
-                    <h5 class="card-title card-question">A graph and some text here</h5>
-                    <a class="btn btn-primary col-md-2 mt-5" class="next-btn" onclick="nextBtn(this)">Next</a>
+                <div class="card-body text-center">
+                    <a class="btn btn-primary col-md-2" class="next-btn" onclick="nextBtn(this)">Next</a>
                 </div>
             </div>
             </section>
@@ -204,22 +218,33 @@
 
 
             <!-- FACTS -->
-            <div class="card fact-card">
-                <div class="card-body">
-                    <h5 class="card-title card-question">A graph and some text here</h5>
-                    <!-- <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1" style="font-size: 80%">I certify that I am of sound mind and healthy body, that this is my will, and I revoke all prior wills and codicils.</label>
-                    </div> -->
-
+            <div class="card fact-card side-card" id='card-screen3-q1'>
+                    <div class="card-body">
+                        <div id="graph-screen3-q1"></div>
+                        
+                        <div class="text-center">
+                            <h5 class="card-title card-question">
+                                85% of wills include one or more of these
+                            </h5>   
+                        </div>
+                    </div>
+                    
                 </div>
-            </div>
-            <div class="card fact-card">
-                <div class="card-body">
-                    <h5 class="card-title card-question">A graph and some text here</h5>
-                    <a class="btn btn-primary col-md-2 mt-5" class="next-btn" onclick="nextBtn(this)">Next</a>
+                <div class="card fact-card side-card" id='card-screen3-q2'>
+                        <div class="card-body">
+                            <div id="graph-screen3-q2"></div>
+                            
+                        <div class="text-center">
+                            <a class="btn btn-primary mt-4 animated fadeIn">I would like to explore other common scenarios</a>
+                        </div>
+                           
+                        </div>
+                    </div>
+                <div class="card fact-card">
+                    <div class="card-body text-center">
+                        <a class="btn btn-primary col-md-2" class="next-btn" onclick="nextBtn(this)">Next</a>
+                    </div>
                 </div>
-            </div>
             </section>
 
 
@@ -440,8 +465,7 @@
         </div>
 
 
-
-
+       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

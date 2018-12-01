@@ -5,7 +5,9 @@
 .hidden-question{
     display: none;
 }
-
+.side-card{
+    display: none;
+}
 #q-age{
 
 }
