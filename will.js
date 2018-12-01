@@ -38,9 +38,14 @@ function yesOrNoBtn(elem, screen) {
         fadeIn(document.getElementById(q2))
 
         //draw new card
-        fadeIn(document.getElementById('card-screen2-q2'))
+        fadeIn(document.getElementById(card2))
         google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawGraphScreen2Q2);
+        if(screen == 'screen2'){
+            google.charts.setOnLoadCallback(drawGraphScreen2Q2);
+        }
+        else if (screen == 'screen3'){
+            google.charts.setOnLoadCallback(drawGraphScreen3Q2);
+        }
         
 
     }
@@ -51,9 +56,14 @@ function yesOrNoBtn(elem, screen) {
         fadeOut(document.getElementById(q2))
         fadeOut(document.getElementById(card2))
 
-        fadeIn(document.getElementById('card-screen2-q1'))
+        fadeIn(document.getElementById(card1))
         google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawGraphScreen2Q1);
+        if(screen == 'screen2'){
+            google.charts.setOnLoadCallback(drawGraphScreen2Q1);
+        }
+        else if (screen == 'screen3'){
+            google.charts.setOnLoadCallback(drawGraphScreen3Q1);
+        }
         
     }
     // console.log("hello")
