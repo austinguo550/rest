@@ -60,6 +60,7 @@ function yesOrNoBtn(elem, screen) {
         google.charts.load('current', {'packages':['corechart']});
         if(screen == 'screen2'){
             google.charts.setOnLoadCallback(drawGraphScreen2Q1);
+            fadeOut(document.getElementById("screen2-q3"))
         }
         else if (screen == 'screen3'){
             google.charts.setOnLoadCallback(drawGraphScreen3Q1);
