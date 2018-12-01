@@ -21,7 +21,8 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/#">
+
+        <a class="navbar-brand" href="index.html">
             <span class='header-brand' style='color: #6C9977'>r</span>
             <span class='header-brand' style='color: #92CCA0'>e</span>
             <span class='header-brand' style='color: #3C70B4'>s</span>
@@ -31,21 +32,22 @@
     </nav>
 
     <div id="surveyButton" class="text-center" style="padding: 25vh; display:none; position: absolute; margin:auto; width: 100%; z-index: 100;">
-        <a href="/survey.html"><button type="button" class="btn btn-outline-default waves-effect">Complete survey to get started</button></a>
+        <a href="survey.html"><button type="button" class="btn btn-outline-default waves-effect">Complete survey to get started</button></a>
     </div>
 
     <div id="categories_content" style="z-index:1">
-      <div class="blue-text text-center justify-content-center py-5 px-4 my-5">
+      <div class="blue-text text-center justify-content-center pt-5 pb-1 px-4 my-5">
         <div>
           <h2 class="card-title h1-responsive pt-3 mb-5 font-bold animated fadeIn"><strong>What can we help you with today?</strong></h2>
 
         </div>
       </div>
 
-        <div class="container text-center">
+        
+        <div class="container text-center pb-3">
             <div class="row justify-content-center">
               <div class="col-md-3">
-                <a href="#" ><button type="button" class="btn btn-circle animated fadeIn btn-action-selection" style='background-color: #6C9977'>Will</button></a>
+                <a href="will.html" ><button type="button" class="btn btn-circle animated fadeIn btn-action-selection" style='background-color: #6C9977'>Will</button></a>
               </div>
               <div class="col-md-3">
                 <a href="trust.html"><button type="button" class="btn btn-circle animated fadeIn btn-action-selection" style='background-color: #92CCA0'>Trust</button></a>
@@ -59,6 +61,11 @@
             </div>
 
         </div>
+        
+        <div id="editSurvey" class="container text-center pt-5" style="display:none">
+            <a href="survey.html"><button type="button" class="btn btn-outline-default waves-effect">Edit survey</button></a>
+        </div>
+        
     </div>
 
 
@@ -70,21 +77,39 @@
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/js/mdb.min.js"></script>
     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-
-    <!-- <script type="text/javascript">
+    
+     <script type="text/javascript">
         window.onload = function() {
+            
+            function editSurvey() {
+                console.log(sessionStorage.getItem("editSurvey"));
+                if (sessionStorage.getItem("editSurvey") == 'true') {
+                    document.getElementById("editSurvey").style.display = "block";
+                }
+            }
 
             function checkSurveyCompleted() {
-                if (sessionStorage.survey === undefined) {
+                let survey = JSON.parse(sessionStorage.getItem("survey"));
+                
+                if (sessionStorage.getItem("name") === null && sessionStorage.getItem("age") === null && sessionStorage.getItem("state") === null) {
+                    console.log("undefined survey")
                     document.getElementById("categories_content").className += " blur";
-                    document.getElementById("surveyButton").style.display = "block"
+                    document.getElementById("surveyButton").style.display = "block";
+                    return;
                 }
+                else {
+                    sessionStorage.setItem("editSurvey", true);
+                }
+                
             }
 
 
             checkSurveyCompleted();
+            editSurvey();
+            
         }
-    </script> -->
+
+    </script> 
 
   </body>
 </html>

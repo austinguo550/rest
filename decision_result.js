@@ -12,7 +12,13 @@ function makeRecommendation() {
     var concernsList = JSON.parse(sessionStorage.getItem('concerns-list'));
 
     //parse data if necessary
-    var hasProperty = assetsList.includes('property'); //if property is in assets list
+    var hasProperty;
+    if(assetsList == null){
+        hasProperty = false;
+    }
+    else{
+        hasProperty = assetsList.includes('property'); //if property is in assets list
+    }   
     ifIncludeKids = ifIncludeKids == "yes";
 
     if (ifIncludeKids || hasProperty) {
